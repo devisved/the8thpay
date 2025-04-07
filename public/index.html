@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th Pay Commission</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 { 
+            color: #36d7e9;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .coming-soon {
+            color: #febf96;
+            font-size: 2rem;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+        #firebase-status {
+            color: #da8bfe;
+            font-size: 1.8rem;
+            margin: 30px 0;
+        }
+        .footer {
+            color: #a5a5a5;
+            font-size: 1.8rem; /* Same as firebase-status */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>8th Pay Commission</h1>
+        <p class="coming-soon">Calculator and chatbox coming soon!</p>
+        <p id="firebase-status">Checking Firebase...</p>
+    </div>
+    <p class="footer">Powered By Dev Nair &nbsp; ©2025 All Rights Reserved</p>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCX5M7Yuz_vTbIOvnKzi_gPpTi501aeHwQ",
+            authDomain: "the8thpay.firebaseapp.com",
+            projectId: "the8thpay",
+            storageBucket: "the8thpay.appspot.com",
+            messagingSenderId: "779653698648",
+            appId: "1:779653698648:web:9a0198576380e6184aa62d"
+        };
+        try {
+            initializeApp(firebaseConfig);
+            document.getElementById("firebase-status").textContent = "Firebase connected successfully!";
+        } catch (e) {
+            console.error(e);
+            document.getElementById("firebase-status").textContent = "Firebase connection failed.";
+        }
+    </script>
+</body>
+</html>
