@@ -3,77 +3,1275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8th Pay Commission</title>
+    <meta name="title" content="8th Pay Commission Salary Calculator for Central Govt Employees (2025)">
+    <meta name="description" content="Calculate 8th Pay Commission salary & pension with our CPC Calculator. Join chat to discuss DA hikes, arrears, and govt salary updates with experts.">
+    <meta name="keywords" content="8th Pay Commission, CPC Calculator, Central Government Salary, Pay Scale Calculator, DA Hike News, Salary Arrears, Defence Pay Calculator, Pension Calculator, Government Salary Updates, 7th to 8th Pay Transition, Latest CPC News, DA Calculation, Expert Salary Chat, Govt Pay Fixation, Retirement Benefits">
+    
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="8th Pay Commission Salary Calculator (2025)">
+    <meta property="og:description" content="Easily estimate your 8th Pay Commission salary for central government jobs. Try it now!">
+    <meta property="og:image" content="https://i.imgur.com/u99GZ94.png">
+    <meta property="og:url" content="https://the8thpay.web.app">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://the8thpay.web.app">
+    
+    <title>8th Pay Commission Calculator</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center;
-            padding: 20px;
-            font-size: 1.5rem;
-            position: relative;
-            min-height: 100vh;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
+            padding: 0;
         }
-        h1 { 
-            color: #36d7e9;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
         }
-        .coming-soon {
-            color: #febf96;
-            font-size: 2rem;
-            margin: 30px 0;
-            animation: pulse 2s infinite;
-        }
-        #firebase-status {
-            color: #da8bfe;
-            font-size: 1.8rem;
-            margin: 30px 0;
-        }
-        .footer {
-            color: #a5a5a5;
-            font-size: 1.8rem; /* Same as firebase-status */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .share-section {
+            text-align: center;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
             width: 100%;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        .content {
+        .share-section span {
+            font-size: 0.95em; /* Reduced font size to fit in one line */
+        }
+        .share-section a {
+            color: #6364fa;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+        .share-icon {
+            display: inline-block;
+            margin-left: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #6364fa;
+        }
+        .calculator-section, .faq-section, .chatbox-section {
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        .calculator-left, .chatbox-left {
+            flex: 0 0 25%;
+            min-width: 200px;
+        }
+        .calculator-center, .faq-center, .chatbox-center {
+            flex: 1;
+            background-color: #fff;
+            padding: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .calculator-content, .faq-content, .chatbox-content {
+            padding: 20px;
+        }
+        .calculator-right, .chatbox-right {
+            flex: 0 0 25%;
+            min-width: 200px;
+        }
+        .calculator-center {
+            border-top: 3px solid #5ff9dd;
+            background: linear-gradient(45deg, rgba(95,249,221,0.05) 0%, rgba(99,100,250,0.05) 100%);
+        }
+        .chatbox-center {
+            border-top: 3px solid #da8bfe;
+            background: linear-gradient(45deg, rgba(218,139,254,0.05) 0%, rgba(54,215,233,0.05) 100%);
+        }
+        .faq-center {
+            border-top: 3px solid #febf96;
+            background: linear-gradient(45deg, rgba(254,191,150,0.05) 0%, rgba(95,249,221,0.05) 100%);
+            padding: 10px; /* Reduced padding */
+        }
+        .ad-space-left, .ad-space-right, .ad-space-bottom {
+            width: 100%;
+            min-height: 250px;
+            margin: 10px 0;
+            text-align: center;
+            display: none; /* Hidden until ads are provided */
+            border-radius: 8px;
+        }
+        .calculator-banner-container {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            position: relative;
+            background-color: #fff; /* Changed to white as requested */
+        }
+        .calculator-banner {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        .chatbox-logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chatbox-logo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .toggle-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #5ff9dd;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .toggle-buttons button.active {
+            background-color: #5ff9dd;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+        select:focus, input:focus {
+            border-color: #5ff9dd;
+            outline: none;
+        }
+        .faq-center {
+            font-size: 0.9em;
+            max-height: 150px !important; /* Reduced height to show ~2 questions */
+            overflow-y: auto !important;
+        }
+        .faq-center h2 {
+            color: #febf96;
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            font-style: italic;
+            animation: pulseFade 4s infinite ease-in-out;
+            text-align: center;
+            border-left: 3px solid #5ff9dd;
+        }
+        
+        @keyframes pulseFade {
+            0% {
+                opacity: 0.8;
+                transform: scale(0.98);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.01);
+                background-color: #f0f0f0;
+            }
+            100% {
+                opacity: 0.8;
+                transform: scale(0.98);
+            }
+        }
+        
+        .news-ticker {
+            height: 120px;
+            overflow-y: scroll;
+            border: 1px solid #5ff9dd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .news-ticker p {
+            margin: 8px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .result-section {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .result-section strong {
+            font-size: 1.2em;
+            color: #5ff9dd;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #a5a5a5;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .checkbox-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .chatbox-features {
+            margin-top: 15px;
+        }
+        .chatbox-features ul {
+            padding-left: 20px;
+            color: #666;
+        }
+        .chatbox-features li {
+            margin-bottom: 8px;
+        }
+        .chatbox-features strong {
+            color: #36d7e9;
+        }
+        
+        /* Chat Interface Styles */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
             margin-top: 20px;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .chat-header {
+            background: linear-gradient(45deg, #da8bfe 0%, #febf96 100%);
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .chat-options {
+            display: flex;
+        }
+        .chat-option {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+        .chat-option.active {
+            background-color: rgba(255,255,255,0.4);
+            font-weight: bold;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+        .message-content {
+            padding: 8px 12px;
+            border-radius: 18px;
+            display: inline-block;
+        }
+        .message.received {
+            align-self: flex-start;
+        }
+        .message.received .message-content {
+            background-color: #e6e6e6;
+        }
+        .message.sent {
+            margin-left: auto;
+            text-align: right;
+        }
+        .message.sent .message-content {
+            background-color: #36d7e9;
+            color: white;
+        }
+        .message-info {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+        .chat-input input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            background-color: #da8bfe;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background-color: #c67ae7;
+        }
+        .user-list {
+            margin-top: 15px;
+        }
+        .user-list h4 {
+            color: #da8bfe;
+            margin-bottom: 10px;
+        }
+        .user {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .user:hover {
+            background-color: #f5f5f5;
+        }
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #febf96;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .user-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+        .user-status.online {
+            background-color: #5ff9dd;
+        }
+        .user-status.offline {
+            background-color: #ddd;
+        }
+        .notification-badge {
+            background-color: #febf96;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        /* Reset Buttons */
+        #reset-salary-btn, #reset-pension-btn {
+            background: #6b0899;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        #reset-salary-btn:hover, #reset-pension-btn:hover {
+            background: #4d066b;
+            transform: scale(1.05);
+        }
+        
+        /* New styles for chat header logo */
+.chat-header-logo {
+    height: 100%;
+    max-height: 45px;
+    width: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+    object-fit: contain;
+}
+        
+        @media (max-width: 768px) {
+            .calculator-section, .faq-section, .chatbox-section {
+                flex-direction: column;
+            }
+            .calculator-left, .calculator-right, .chatbox-left, .chatbox-right {
+                width: 100%;
+                min-width: unset;
+            }
+            #reset-salary-btn, #reset-pension-btn {
+                width: auto;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .share-section span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        .share-section::after {
+            content: "Also discuss in chat below with experts!";
+            display: block;
+            font-style: italic;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        .faq-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #febf96;
+        }
+        .faq-center p {
+            margin: 4px 0; /* Reduced margin above first question */
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>8th Pay Commission</h1>
-        <p class="coming-soon">Calculator and chatbox coming soon!</p>
-        <p id="firebase-status">Checking Firebase...</p>
+    <div class="share-section">
+        <span>Share this app with colleagues and friends!</span>
+        <div class="share-icon" onclick="shareContent()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+        </div>
     </div>
-    <p class="footer">Powered By Dev Nair &nbsp; ©2025 All Rights Reserved</p>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    <div class="container">
+        <!-- Calculator Section -->
+        <div class="calculator-section">
+            <div class="calculator-left">
+                <!-- Left side ad space (invisible until ads provided) -->
+                <div class="ad-space-left"></div>
+            </div>
+            
+            <div class="calculator-center">
+                <div class="calculator-banner-container">
+                    <img src="https://i.imgur.com/u99GZ94.png" alt="8th Pay Commission Calculator" class="calculator-banner">
+                </div>
+                
+                <div class="calculator-content">
+                    <div class="toggle-buttons">
+                        <button class="active" id="salary-btn">For Salary</button>
+                        <button id="pension-btn">For Pension</button>
+                    </div>
+                    
+                    <form id="salary-form">
+                        <div class="form-group">
+                            <label>Pay Level (GFR Model):</label>
+                            <select id="pay-level">
+                                <option value="1">Level 1 (GP – 1800)</option>
+                                <option value="2">Level 2 (GP – 1900)</option>
+                                <option value="3">Level 3 (GP – 2000)</option>
+                                <option value="4">Level 4 (GP – 2400)</option>
+                                <option value="5">Level 5 (GP – 2800)</option>
+                                <option value="6">Level 6 (GP – 4200)</option>
+                                <option value="7">Level 7 (GP – 4600)</option>
+                                <option value="8">Level 8 (GP – 4800)</option>
+                                <option value="9">Level 9 (GP – 5400)</option>
+                                <option value="10">Level 10 (GP – 5400)</option>
+                                <option value="11">Level 11 (GP – 6600)</option>
+                                <option value="12">Level 12 (GP – 7600)</option>
+                                <option value="13">Level 13 (GP – 8700)</option>
+                                <option value="13A">Level 13A (GP – 8900)</option>
+                                <option value="14">Level 14 (GP – 10000)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="custom-pay-level" placeholder="Enter Your Value" style="display:none;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Basic Pay:</label>
+                            <input type="number" id="basic-pay" placeholder="Enter Basic Pay">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Expected Increment (Fitment Factor):</label>
+                            <select id="fitment-factor">
+                                <option value="1.92">1.92 (92% Increase)</option>
+                                <option value="2.08">2.08 (108% Increase)</option>
+                                <option value="2.28">2.28 (128% Increase)</option>
+                                <option value="2.86">2.86 (186% Increase)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="custom-fitment" placeholder="Enter Your Value" style="display:none;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Expected DA (%):</label>
+                            <select id="da-percent">
+                                <option value="35">35% (Low Estimate)</option>
+                                <option value="38">38% (Medium Estimate)</option>
+                                <option value="42">42% (High Estimate)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="custom-da" placeholder="Enter Your DA %" style="display:none;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>House Rent Allowance (HRA %):</label>
+                            <select id="hra-percent">
+                                <option value="0">No HRA</option>
+                                <option value="30">X City (30%)</option>
+                                <option value="20">Y City (20%)</option>
+                                <option value="10">Z City (10%)</option>
+                                <option value="27">X City (27%)</option>
+                                <option value="18">Y City (18%)</option>
+                                <option value="9">Z City (9%)</option>
+                                <option value="24">X City (24%)</option>
+                                <option value="16">Y City (16%)</option>
+                                <option value="8">Z City (8%)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="custom-hra" placeholder="Enter Your HRA %" style="display:none;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Travel Allowance (TA) & Other Allowances:</label>
+                            <select id="ta-amount">
+                                <option value="0">No TA</option>
+                                <option value="7200">Higher TPTA Cities</option>
+                                <option value="3600">Other Cities</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="custom-ta" placeholder="Enter Your TA Amount" style="display:none;">
+                        </div>
+                        
+                        <div class="result-section">
+                            <p>Estimated Result: <strong id="result-value">₹0</strong></p>
+                        </div>
+                        
+                        <button type="button" id="reset-salary-btn">Reset</button>
+                        
+                        <div class="disclaimer">
+                            These are expected values; final values will be updated after official announcement.
+                        </div>
+                    </form>
+                    
+                    <form id="pension-form" style="display:none;">
+                        <!-- Pension calculation form will be shown when "For Pension" is clicked -->
+                        <div class="form-group">
+                            <label>Last Basic Pay:</label>
+                            <input type="number" id="last-basic-pay" placeholder="Enter Last Basic Pay">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Years of Service:</label>
+                            <input type="number" id="years-of-service" placeholder="Enter Years of Service">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Expected Increment (Fitment Factor):</label>
+                            <select id="pension-fitment-factor">
+                                <option value="1.92">1.92 (92% Increase)</option>
+                                <option value="2.08">2.08 (108% Increase)</option>
+                                <option value="2.28">2.28 (128% Increase)</option>
+                                <option value="2.86">2.86 (186% Increase)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="pension-custom-fitment" placeholder="Enter Your Value" style="display:none;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Expected DA (%):</label>
+                            <select id="pension-da-percent">
+                                <option value="35">35% (Low Estimate)</option>
+                                <option value="38">38% (Medium Estimate)</option>
+                                <option value="42">42% (High Estimate)</option>
+                                <option value="custom">Custom Input</option>
+                            </select>
+                            <input type="number" id="pension-custom-da" placeholder="Enter Your DA %" style="display:none;">
+                        </div>
+                        
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="ups-checkbox">
+                            <label for="ups-checkbox">Apply Unified Pension Scheme (UPS): 50% of last 12 months' basic pay as pension</label>
+                        </div>
+
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="arrears-toggle">
+                            <label for="arrears-toggle">Include Arrears Calculation</label>
+                        </div>
+                        <div id="arrears-section" style="display:none;">
+                            <div class="form-group">
+                                <label>Old Pension Amount:</label>
+                                <input type="number" id="old-pension" placeholder="Enter Old Pension">
+                            </div>
+                            <div class="form-group">
+                                <label>Revised Pension Amount:</label>
+                                <input type="number" id="new-pension" placeholder="Enter Revised Pension">
+                            </div>
+                            <div class="form-group">
+                                <label>Effective From:</label>
+                                <input type="month" id="from-date">
+                            </div>
+                            <div class="form-group">
+                                <label>Calculation Up To:</label>
+                                <input type="month" id="to-date">
+                            </div>
+                            <div class="result-section">
+                                <p>Total Arrears: <strong id="arrears-result">₹0</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <p>Estimated Pension: <strong id="pension-result-value">₹0</strong></p>
+                        </div>
+                        
+                        <button type="button" id="reset-pension-btn">Reset</button>
+                        
+                        <div class="disclaimer">
+                            These are expected values; final values will be updated after official announcement.
+                        </div>
+                    </form>
+                    
+                    <!-- News Ticker -->
+                    <div class="news-ticker">
+                        <p>News updates on 8th Pay Commission coming soon - Manually scrollable, clickable links.</p>
+                        <p>Stay tuned for the latest updates on DA hikes, arrears, and government salary updates.</p>
+                        <p>Expected announcement of 8th Pay Commission recommendations by end of 2025.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-right">
+                <!-- Right side ad space (invisible until ads provided) -->
+                <div class="ad-space-right"></div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <div class="faq-title">FAQ / How to Use</div>
+            <div class="faq-center">
+                <p><strong>How to use the Pension Calculator?</strong><br>
+                Enter your last basic pay and years of service. Choose the expected fitment factor and DA. Optionally, use the UPS checkbox to calculate based on 50% of last basic. Estimated pension will show instantly.</p>
+
+                <p><strong>What is the UPS (Unified Pension Scheme) checkbox?</strong><br>
+                If enabled, the calculator will use 50% of your last basic pay (average of 12 months) for pension estimation, ignoring fitment factor logic.</p>
+
+                <p><strong>How are Arrears calculated in the Pension Calculator?</strong><br>
+                Enable the arrears checkbox, input old and revised pension amounts, and select effective dates. The tool will compute total arrears over the months specified.</p>
+
+                <p><strong>How to calculate salary using the 8th CPC Salary Calculator?</strong><br>
+                Select pay level and enter current basic pay. Then choose or input expected fitment factor, DA, HRA %, and TA. The total salary is updated dynamically.</p>
+
+                <p><strong>What is Fitment Factor and why is it important?</strong><br>
+                Fitment Factor is a multiplier used to calculate revised pay under the new CPC. A factor of 2.28 means a 128% increase over your current basic pay.</p>
+
+                <p><strong>Can I use my own values for DA, HRA, and TA?</strong><br>
+                Yes. Select "Custom" in the respective dropdowns to input your own DA %, HRA %, or TA value to personalize the estimation.</p>
+            </div>
+        </div>
+        
+        <!-- Chatbox Section -->
+        <div class="chatbox-section">
+            <div class="chatbox-left">
+                <!-- Left side ad space (invisible until ads provided) -->
+                <div class="ad-space-left"></div>
+            </div>
+            
+            <div class="chatbox-center">
+                <div class="chatbox-content">
+                    <div class="chatbox-logo-container">
+                        <img src="https://i.imgur.com/C7EwTww.png" alt="VedChat Logo" class="chatbox-logo">
+                    </div>
+                    
+                    <p>Join the discussion about 8th Pay Commission updates, DA hikes, and government salary revisions.</p>
+                    
+                    <!-- Chat Interface -->
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <img src="https://i.imgur.com/C7EwTww.png" alt="VedChat" class="chat-header-logo">
+                            <div class="chat-options">
+                                <div class="chat-option active" id="public-chat">Public</div>
+                                <div class="chat-option" id="private-chat">Private</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Messages will be dynamically added here -->
+                            <div class="message received">
+                                <div class="message-content">Welcome to 8th Pay Commission Chat! Join the discussion.</div>
+                                <div class="message-info">System • Just now</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input">
+                            <input type="text" id="message-input" placeholder="Type your message here...">
+                            <button id="send-button">Send</button>
+                        </div>
+                    </div>
+                    
+                    <div class="user-list">
+                        <h4>Online Users</h4>
+                        <div class="user" onclick="startPrivateChat('Rajesh')">
+                            <div class="user-avatar">R</div>
+                            <span>Rajesh</span>
+                            <div class="user-status online"></div>
+                        </div>
+                        <div class="user" onclick="startPrivateChat('Priya')">
+                            <div class="user-avatar">P</div>
+                            <span>Priya</span>
+                            <div class="user-status online"></div>
+                            <div class="notification-badge">2</div>
+                        </div>
+                        <div class="user" onclick="startPrivateChat('Amit')">
+                            <div class="user-avatar">A</div>
+                            <span>Amit</span>
+                            <div class="user-status offline"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbox-right">
+                <!-- Right side ad space (invisible until ads provided) -->
+                <div class="ad-space-right"></div>
+            </div>
+        </div>
+        
+        <!-- Bottom ad space (invisible until ads provided) -->
+        <div class="ad-space-bottom"></div>
+    </div>
+
+    <footer>
+        Powered By Planet D © 2025 All Rights Reserved
+    </footer>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "8th Pay Commission Calculator",
+        "url": "https://the8thpay.web.app",
+        "description": "Calculate 8th Pay Commission salary & pension with our CPC Calculator. Join chat to discuss DA hikes, arrears, and govt salary updates with experts.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All"
+    }
+    </script>
+
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Firebase configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyCX5M7Yuz_vTbIOvnKzi_gPpTi501aeHwQ",
+            apiKey: "AIzaSyDQnOWmgHcD_Yyv_qCJVTQYUodIKEgRgWQ",
             authDomain: "the8thpay.firebaseapp.com",
             projectId: "the8thpay",
             storageBucket: "the8thpay.appspot.com",
-            messagingSenderId: "779653698648",
-            appId: "1:779653698648:web:9a0198576380e6184aa62d"
+            messagingSenderId: "1234567890",
+            appId: "1:1234567890:web:abcdef1234567890abcdef"
         };
-        try {
-            initializeApp(firebaseConfig);
-            document.getElementById("firebase-status").textContent = "Firebase connected successfully!";
-        } catch (e) {
-            console.error(e);
-            document.getElementById("firebase-status").textContent = "Firebase connection failed.";
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        const storage = firebase.storage();
+        
+        // Toggle between Salary and Pension calculators
+        document.getElementById('salary-btn').addEventListener('click', function() {
+            document.getElementById('salary-form').style.display = 'block';
+            document.getElementById('pension-form').style.display = 'none';
+            document.getElementById('salary-btn').classList.add('active');
+            document.getElementById('pension-btn').classList.remove('active');
+            // Re-trigger animation for salary form disclaimer
+            const salaryDisclaimer = document.querySelector('#salary-form .disclaimer');
+            salaryDisclaimer.style.animation = 'none';
+            setTimeout(() => {
+                salaryDisclaimer.style.animation = 'pulseFade 4s infinite ease-in-out';
+            }, 10);
+        });
+        
+        document.getElementById('pension-btn').addEventListener('click', function() {
+            document.getElementById('salary-form').style.display = 'none';
+            document.getElementById('pension-form').style.display = 'block';
+            document.getElementById('pension-btn').classList.add('active');
+            document.getElementById('salary-btn').classList.remove('active');
+            // Re-trigger animation for pension form disclaimer
+            const pensionDisclaimer = document.querySelector('#pension-form .disclaimer');
+            pensionDisclaimer.style.animation = 'none';
+            setTimeout(() => {
+                pensionDisclaimer.style.animation = 'pulseFade 4s infinite ease-in-out';
+            }, 10);
+        });
+        
+        document.getElementById('ups-checkbox').addEventListener('change', calculatePension);
+        
+        // Show/hide custom input fields based on dropdown selection
+        function setupCustomFields(selectId, customInputId) {
+            const select = document.getElementById(selectId);
+            const customInput = document.getElementById(customInputId);
+            
+            select.addEventListener('change', function() {
+                if (this.value === 'custom') {
+                    customInput.style.display = 'block';
+                } else {
+                    customInput.style.display = 'none';
+                }
+            });
         }
+        
+        // Setup all custom fields
+        setupCustomFields('pay-level', 'custom-pay-level');
+        setupCustomFields('fitment-factor', 'custom-fitment');
+        setupCustomFields('da-percent', 'custom-da');
+        setupCustomFields('hra-percent', 'custom-hra');
+        setupCustomFields('ta-amount', 'custom-ta');
+        setupCustomFields('pension-fitment-factor', 'pension-custom-fitment');
+        setupCustomFields('pension-da-percent', 'pension-custom-da');
+        
+        // Share functionality
+        function shareContent() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '8th Pay Commission Calculator',
+                    text: 'Try this 8th Pay Commission Calculator!',
+                    url: 'https://the8thpay.web.app'
+                })
+                .catch(error => console.log('Error sharing:', error));
+            } else {
+                // Fallback for browsers that don't support navigator.share
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = 'https://the8thpay.web.app';
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('Link copied to clipboard!');
+            }
+        }
+        
+        // Basic calculation functionality
+        function calculateSalary() {
+            const basicPay = parseFloat(document.getElementById('basic-pay').value) || 0;
+            const fitmentSelect = document.getElementById('fitment-factor');
+            const daSelect = document.getElementById('da-percent');
+            const hraSelect = document.getElementById('hra-percent');
+            const taSelect = document.getElementById('ta-amount');
+            
+            let fitmentFactor = fitmentSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('custom-fitment').value) || 2.5 : 
+                parseFloat(fitmentSelect.value);
+                
+            let daPercent = daSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('custom-da').value) || 35 : 
+                parseFloat(daSelect.value);
+                
+            let hraPercent = hraSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('custom-hra').value) || 16 : 
+                parseFloat(hraSelect.value);
+                
+            let taAmount = taSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('custom-ta').value) || 3600 : 
+                parseFloat(taSelect.value);
+            
+            // Calculate new basic pay
+            const newBasicPay = basicPay * fitmentFactor;
+            
+            // Calculate DA
+            const daAmount = (newBasicPay * daPercent) / 100;
+            
+            // Calculate HRA
+            const hraAmount = (newBasicPay * hraPercent) / 100;
+            
+            // Calculate total salary
+            const totalSalary = newBasicPay + daAmount + hraAmount + taAmount;
+            
+            // Update result
+            document.getElementById('result-value').textContent = '₹' + totalSalary.toFixed(2);
+        }
+        
+        function calculatePension() {
+            calculateArrears();
+            const lastBasicPay = parseFloat(document.getElementById('last-basic-pay').value) || 0;
+            const yearsOfService = parseFloat(document.getElementById('years-of-service').value) || 0;
+            const fitmentSelect = document.getElementById('pension-fitment-factor');
+            const daSelect = document.getElementById('pension-da-percent');
+            const upsCheckbox = document.getElementById('ups-checkbox');
+            
+            let fitmentFactor = fitmentSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('pension-custom-fitment').value) || 2.5 : 
+                parseFloat(fitmentSelect.value);
+                
+            let daPercent = daSelect.value === 'custom' ? 
+                parseFloat(document.getElementById('pension-custom-da').value) || 35 : 
+                parseFloat(daSelect.value);
+            
+            let newBasicPension;
+            if (upsCheckbox.checked) {
+                newBasicPension = lastBasicPay * 0.5;
+            } else {
+                newBasicPension = (lastBasicPay * fitmentFactor) * 0.5;
+            }
+            
+            // Adjust for years of service (if less than 10 years, proportional reduction)
+            const serviceAdjustedPension = yearsOfService >= 10 ? 
+                newBasicPension : 
+                newBasicPension * (yearsOfService / 10);
+            
+            // Calculate DA on pension
+            const daAmount = (serviceAdjustedPension * daPercent) / 100;
+            
+            // Calculate total pension
+            const totalPension = serviceAdjustedPension + daAmount;
+            
+            // Update result
+            document.getElementById('pension-result-value').textContent = '₹' + totalPension.toFixed(2);
+        }
+        
+        // Add event listeners for calculation
+        document.getElementById('basic-pay').addEventListener('input', calculateSalary);
+        document.getElementById('fitment-factor').addEventListener('change', calculateSalary);
+        document.getElementById('custom-fitment').addEventListener('input', calculateSalary);
+        document.getElementById('da-percent').addEventListener('change', calculateSalary);
+        document.getElementById('custom-da').addEventListener('input', calculateSalary);
+        document.getElementById('hra-percent').addEventListener('change', calculateSalary);
+        document.getElementById('custom-hra').addEventListener('input', calculateSalary);
+        document.getElementById('ta-amount').addEventListener('change', calculateSalary);
+        document.getElementById('custom-ta').addEventListener('input', calculateSalary);
+        
+        document.getElementById('last-basic-pay').addEventListener('input', calculatePension);
+        document.getElementById('years-of-service').addEventListener('input', calculatePension);
+        document.getElementById('pension-fitment-factor').addEventListener('change', calculatePension);
+        document.getElementById('pension-custom-fitment').addEventListener('input', calculatePension);
+        document.getElementById('pension-da-percent').addEventListener('change', calculatePension);
+        document.getElementById('pension-custom-da').addEventListener('input', calculatePension);
+        
+        // Reset functionality
+        document.getElementById('reset-salary-btn').addEventListener('click', function() {
+            // Reset salary form
+            document.getElementById('salary-form').reset();
+            document.getElementById('result-value').textContent = '₹0';
+            
+            // Hide all custom input fields
+            document.getElementById('custom-pay-level').style.display = 'none';
+            document.getElementById('custom-fitment').style.display = 'none';
+            document.getElementById('custom-da').style.display = 'none';
+            document.getElementById('custom-hra').style.display = 'none';
+            document.getElementById('custom-ta').style.display = 'none';
+            
+            // Reset dropdowns to default values
+            document.getElementById('pay-level').value = '1';
+            document.getElementById('fitment-factor').value = '1.92';
+            document.getElementById('da-percent').value = '35';
+            document.getElementById('hra-percent').value = '0';
+            document.getElementById('ta-amount').value = '0';
+        });
+        
+        document.getElementById('reset-pension-btn').addEventListener('click', function() {
+            // Reset pension form
+            document.getElementById('pension-form').reset();
+            document.getElementById('pension-result-value').textContent = '₹0';
+            document.getElementById('ups-checkbox').checked = false;
+            
+            // Hide all custom input fields
+            document.getElementById('pension-custom-fitment').style.display = 'none';
+            document.getElementById('pension-custom-da').style.display = 'none';
+            
+            // Reset dropdowns to default values
+            document.getElementById('pension-fitment-factor').value = '1.92';
+            document.getElementById('pension-da-percent').value = '35';
+        });
+        
+        // Chat functionality
+        let currentChatMode = 'public';
+        let currentPrivateUser = null;
+        let username = 'Guest_' + Math.floor(Math.random() * 1000);
+        
+        // Toggle between public and private chat
+        document.getElementById('public-chat').addEventListener('click', function() {
+            document.getElementById('public-chat').classList.add('active');
+            document.getElementById('private-chat').classList.remove('active');
+            currentChatMode = 'public';
+            currentPrivateUser = null;
+            loadMessages();
+        });
+        
+        document.getElementById('private-chat').addEventListener('click', function() {
+            document.getElementById('private-chat').classList.add('active');
+            document.getElementById('public-chat').classList.remove('active');
+            currentChatMode = 'private';
+            // If no private user is selected, prompt to select one
+            if (!currentPrivateUser) {
+                addSystemMessage('Please select a user from the list to start a private chat.');
+            }
+        });
+        
+        // Function to start a private chat with a user
+        function startPrivateChat(user) {
+            currentChatMode = 'private';
+            currentPrivateUser = user;
+            document.getElementById('private-chat').classList.add('active');
+            document.getElementById('public-chat').classList.remove('active');
+            
+            // Clear current messages and load private messages
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML = '';
+            
+            addSystemMessage(`Starting private chat with ${user}. Messages will be deleted at midnight.`);
+            
+            // Here you would load private messages from Firebase
+            // For demo, we'll add some sample messages
+            if (user === 'Priya') {
+                setTimeout(() => {
+                    addMessage('Priya', 'Hi there! Do you know when the 8th CPC will be announced?', false);
+                    addMessage('Priya', 'I heard it might be delayed until 2026.', false);
+                }, 500);
+            }
+        }
+        
+        // Function to add a system message
+        function addSystemMessage(text) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message received';
+            messageDiv.innerHTML = `
+                <div class="message-content">${text}</div>
+                <div class="message-info">System • Just now</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Function to add a message to the chat
+        function addMessage(sender, text, isSent = true) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = isSent ? 'message sent' : 'message received';
+            
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">${text}</div>
+                <div class="message-info">${isSent ? 'You' : sender} • ${time}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // In a real app, you would save this message to Firebase
+            if (currentChatMode === 'public') {
+                // Save to public messages collection
+                savePublicMessage(sender, text);
+            } else if (currentPrivateUser) {
+                // Save to private messages collection
+                savePrivateMessage(currentPrivateUser, text);
+            }
+        }
+        
+        // Function to save a public message to Firebase
+        function savePublicMessage(sender, text) {
+            // In a real implementation, this would save to Firebase
+            console.log('Saving public message:', {sender, text, timestamp: new Date()});
+            
+            // Example Firebase code (commented out)
+            /*
+            db.collection('publicMessages').add({
+                sender: sender,
+                text: text,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+            .then((docRef) => {
+                console.log('Message saved with ID: ', docRef.id);
+            })
+            .catch((error) => {
+                console.error('Error adding message: ', error);
+            });
+            */
+        }
+        
+        // Function to save a private message to Firebase
+        function savePrivateMessage(recipient, text) {
+            // In a real implementation, this would save to Firebase
+            console.log('Saving private message:', {sender: username, recipient, text, timestamp: new Date()});
+            
+            // Example Firebase code (commented out)
+            /*
+            const chatId = [username, recipient].sort().join('_');
+            db.collection('privateMessages').add({
+                chatId: chatId,
+                sender: username,
+                recipient: recipient,
+                text: text,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                read: false
+            })
+            .then((docRef) => {
+                console.log('Private message saved with ID: ', docRef.id);
+            })
+            .catch((error) => {
+                console.error('Error adding private message: ', error);
+            });
+            */
+        }
+        
+        // Function to load messages
+        function loadMessages() {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML = '';
+            
+            if (currentChatMode === 'public') {
+                addSystemMessage('Welcome to the public 8th Pay Commission Chat! Join the discussion.');
+                
+                // In a real app, you would load messages from Firebase
+                // For demo, we'll add some sample messages
+                setTimeout(() => {
+                    addMessage('Rajesh', 'Hello everyone! Any updates on the 8th Pay Commission?', false);
+                    addMessage('Amit', 'I heard it might be announced by the end of 2025.', false);
+                    addMessage('Priya', 'The fitment factor is expected to be between 1.92 to 2.86.', false);
+                }, 500);
+            }
+        }
+        
+        // Send message when button is clicked
+        document.getElementById('send-button').addEventListener('click', function() {
+            sendMessage();
+        });
+        
+        // Send message when Enter key is pressed
+        document.getElementById('message-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Function to send a message
+        function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value.trim();
+            
+            if (message) {
+                if (currentChatMode === 'public') {
+                    addMessage(username, message);
+                } else if (currentPrivateUser) {
+                    addMessage(username, message);
+                } else {
+                    addSystemMessage('Please select a user to start a private chat.');
+                }
+                
+                messageInput.value = '';
+            }
+        }
+        
+        // Initialize chat
+        loadMessages();
+        
+        // Function to download chat history as PDF
+        function downloadChatHistory() {
+            // In a real implementation, this would generate a PDF of the chat history
+            alert('Chat history download will be available in the next update.');
+        }
+        
+        // Function to set up midnight chat deletion
+        function setupMidnightDeletion() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const timeUntilMidnight = midnight - now;
+            
+            setTimeout(() => {
+                // Clear all chats at midnight
+                const chatMessages = document.getElementById('chat-messages');
+                chatMessages.innerHTML = '';
+                addSystemMessage('Chat history has been cleared. All messages from the previous day have been deleted.');
+                
+                // In a real implementation, this would delete messages from Firebase
+                
+                // Set up the next day's deletion
+                setupMidnightDeletion();
+            }, timeUntilMidnight);
+        }
+        
+        document.getElementById('arrears-toggle').addEventListener('change', function() {
+            document.getElementById('arrears-section').style.display = this.checked ? 'block' : 'none';
+        });
+
+        function calculateArrears() {
+            if (!document.getElementById('arrears-toggle').checked) return;
+
+            const oldPension = parseFloat(document.getElementById('old-pension').value) || 0;
+            const newPension = parseFloat(document.getElementById('new-pension').value) || 0;
+            const fromDate = new Date(document.getElementById('from-date').value);
+            const toDate = new Date(document.getElementById('to-date').value);
+
+            const months = (toDate.getFullYear() - fromDate.getFullYear()) * 12 +
+                           (toDate.getMonth() - fromDate.getMonth()) + 1;
+
+            const monthlyDiff = newPension - oldPension;
+            const totalArrears = monthlyDiff * months;
+
+            document.getElementById('arrears-result').textContent = '₹' + totalArrears.toFixed(2);
+        }
+
+        // Set up midnight deletion
+        setupMidnightDeletion();
     </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9308d5fc0ab9b0ac',t:'MTc0NDY5Mjc3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
